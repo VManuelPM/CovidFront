@@ -21,6 +21,8 @@ body {
   margin: 0;
   padding: 0;
   margin-left: var(--width-collapsed);
+  transition: margin-left 1s ease-in;
+
 }
 
 .body-expanded {

@@ -14,9 +14,10 @@ import { RouterModule } from "@angular/router";
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { InterceptorService } from "./core/interceptors/interceptor.service";
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, LoginComponent, MapComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
