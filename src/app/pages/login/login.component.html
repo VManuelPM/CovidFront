@@ -1,0 +1,42 @@
+<div class="parent-container">
+  <div class="container">
+    <form action="" class="form" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+
+      <h2>COVID SIGN IN</h2>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" formControlName="email">
+        <mat-error *ngIf="getControl.email.touched && getControl.email.invalid">
+          <mat-error *ngIf="getControl.email.errors.email && !getControl.email.errors.required">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="getControl.email.errors.required">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" formControlName="password">
+        <mat-error *ngIf="getControl.password.touched && getControl.password.invalid">
+          <mat-error *ngIf="getControl.password.errors.minlength && !getControl.password.errors.required">
+            Please enter a valid password > 6
+          </mat-error>
+          <mat-error *ngIf="getControl.password.errors.required">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <input type="submit" value="SIGN IN" id="submit" [disabled]="loginForm.invalid">
+      <a href="#">Signup Now</a>
+    </form>
+
+    <div class="side">
+      <img src="../../../assets/img/covid.png" alt="">
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>
