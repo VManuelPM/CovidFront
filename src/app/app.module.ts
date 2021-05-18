@@ -14,10 +14,21 @@ import { RouterModule } from "@angular/router";
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { InterceptorService } from "./core/interceptors/interceptor.service";
-import { MapComponent } from './components/map/map.component';
+import { MapComponent } from "./components/map/map.component";
+import { ChartContinentComponent } from "./components/chart-continent/chart-continent.component";
+import { ChartsModule } from "ng2-charts";
+import { ChartBarContinentComponent } from './components/chart-bar-continent/chart-bar-continent.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, LoginComponent, MapComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    LoginComponent,
+    MapComponent,
+    ChartContinentComponent,
+    ChartBarContinentComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,6 +41,7 @@ import { MapComponent } from './components/map/map.component';
     SweetAlert2Module,
     NgxSpinnerModule,
     BrowserAnimationsModule,
+    ChartsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

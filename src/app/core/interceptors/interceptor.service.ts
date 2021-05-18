@@ -20,6 +20,12 @@ export class InterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     this.spinnerService.callSpinner();
+    let token = sessionStorage.getItem("token");
+    if (token) {
+      req = req.clone({
+        headers: req.headers.set("auth-token", token),
+      });
+    }
     return next
       .handle(req)
       .pipe(finalize(() => this.spinnerService.stopSpinner()));

@@ -18,6 +18,13 @@ export class UserService {
     return this.http.post<any>(`${this.baseUrl}/user/login`, loginObject);
   }
 
+  getUser(token: string) {
+    let userToken = {
+      user: token,
+    };
+    return this.http.post<any>(`${this.baseUrl}/user/getUser`, userToken);
+  }
+
   isLogged() {
     if (sessionStorage.getItem("token")) {
       return true;

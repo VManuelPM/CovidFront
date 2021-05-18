@@ -21,3 +21,26 @@
   background-color: #FCF6F5FF;
   border: 1px solid;
 }
+
+.wrap-charts {
+  display: flex;
+  justify-content: center;
+}
+
+.pie {
+  background-color: whitesmoke;
+  margin: 15px 15px 5px 15px;
+  width: 45%;
+  border: 1px solid;
+}
+
+.bar {
+  background-color: whitesmoke;
+  width: 45%;
+  margin-top: 15px;
+  border: 1px solid;
+}
+
+h2 {
+  text-align: center;
+}
