@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
-
+import * as menu from "../../shared/menu/menu.json";
+import { menuOption } from "../../models/menu-option";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -8,13 +9,18 @@ import { UserService } from "../../services/user.service";
 })
 export class HeaderComponent implements OnInit {
   user: any;
+  menuOptions: menuOption[];
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.getUser();
+    this.menuOptions = menu.options;
   }
 
+  /**
+   * Action of burger button
+   */
   menuShow() {
     console.log("clic");
     let menu = document.querySelector("#sidemenu");

@@ -18,6 +18,8 @@ import { MapComponent } from "./components/map/map.component";
 import { ChartContinentComponent } from "./components/chart-continent/chart-continent.component";
 import { ChartsModule } from "ng2-charts";
 import { ChartBarContinentComponent } from './components/chart-bar-continent/chart-bar-continent.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ChartBarContinentComponent } from './components/chart-bar-continent/cha
     MapComponent,
     ChartContinentComponent,
     ChartBarContinentComponent,
+    SearchBarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

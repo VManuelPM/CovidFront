@@ -1,0 +1,31 @@
+/* Login Form */
+.form-container {
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+button {
+  background-color: var(--bgcolor);
+  color: white;
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+  width: 50%;
+  text-align: center;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}

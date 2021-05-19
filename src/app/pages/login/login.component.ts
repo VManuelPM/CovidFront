@@ -7,7 +7,6 @@ import {
 } from "@angular/forms";
 import Swal from "sweetalert2";
 import { UserService } from "../../services/user.service";
-import { SpinnerService } from "../../core/services/spinner.service";
 import { Router } from "@angular/router";
 
 @Component({

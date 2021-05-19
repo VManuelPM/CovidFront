@@ -1,0 +1,38 @@
+<div class="form-container">
+  <div>
+    <img src="../../../assets/img/country.png">
+  </div>
+  <form action="" class="form" [formGroup]="searchForm" (ngSubmit)="search()" novalidate>
+    <mat-form-field>
+      <mat-label>Search...</mat-label>
+      <input matInput type="text" name="field" formControlName="field">
+      <mat-error *ngIf="getControl.field.touched && getControl.field.invalid">
+        <mat-error *ngIf="getControl.field.errors.minlegth && !getControl.field.errors.required">
+          <h3>mimimun 3 characters</h3>
+        </mat-error>
+        <mat-error *ngIf="getControl.field.errors.required">
+          <h3><strong>required</strong></h3>
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Select</mat-label>
+      <mat-select name="option" formControlName="option">
+        <mat-option value="country">Country</mat-option>
+        <mat-option value="continet">Continet</mat-option>
+      </mat-select>
+      <mat-error *ngIf="getControl.option.touched && getControl.option.invalid">
+        <mat-error *ngIf="getControl.option.errors.required">
+          <h3><strong>required</strong></h3>
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+
+
+    <button mat-button type="submit" id="submit" *ngIf="!searchForm.invalid">SEARCH</button>
+  </form>
+  <div>
+    <img src="../../../assets/img/location.png">
+  </div>
+</div>

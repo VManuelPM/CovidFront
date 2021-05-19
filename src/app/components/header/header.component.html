@@ -1,4 +1,4 @@
-<div id="sidemenu" class="menu-collapsed">
+<div id="sidemenu" class="menu-collapsed" *ngIf="menuOptions">
   <!-- Header -->
   <div id="header">
     <div id="title">
@@ -17,14 +17,13 @@
   </div>
   <!-- Items -->
   <div id="menu-items">
-    <div class="item">
-      <a href="#">
+    <div class="item" *ngFor="let item of menuOptions">
+      <a [routerLink]="['/'] + item.url" routerLinkActive="active">
         <div class="icon">
-          <img src="" alt="">
-          <mat-icon>bug_report</mat-icon>
+          <img src="{{item.icon}}" alt="icon">
         </div>
         <div class="title">
-          Cloud Services
+          {{item.title}}
         </div>
       </a>
     </div>

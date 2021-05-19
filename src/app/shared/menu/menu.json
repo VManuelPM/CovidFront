@@ -1,0 +1,18 @@
+{
+  "options": [{
+      "title": "Home",
+      "icon": "../../../assets/img/home.png",
+      "url": "home"
+    },
+    {
+      "title": "Search",
+      "icon": "../../../assets/img/search.png",
+      "url": "search"
+    },
+    {
+      "title": "Option",
+      "icon": "../../../assets/img/search.png",
+      "url": "search"
+    }
+  ]
+}
