@@ -20,6 +20,7 @@ import { ChartsModule } from "ng2-charts";
 import { ChartBarContinentComponent } from './components/chart-bar-continent/chart-bar-continent.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchComponent } from './pages/search/search.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SearchComponent } from './pages/search/search.component';
     ChartBarContinentComponent,
     SearchBarComponent,
     SearchComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

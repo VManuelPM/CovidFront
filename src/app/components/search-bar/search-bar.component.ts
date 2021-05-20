@@ -14,6 +14,7 @@ import { DataService } from "../../services/data.service";
 })
 export class SearchBarComponent implements OnInit {
   searchForm: FormGroup;
+  data: any;
 
   constructor(private dataService: DataService, private fb: FormBuilder) {}
 
@@ -39,7 +40,19 @@ export class SearchBarComponent implements OnInit {
   }
 
   search() {
-    console.log(this.searchForm.value.field);
-    console.log(this.searchForm.value.option);
+    let fieldForm = this.searchForm.value.field;
+    let optionForm = this.searchForm.value.option;
+    if (optionForm == "country") {
+      this.dataService.getDataCountry(fieldForm).subscribe((res) => {
+        console.log(res);
+        this.data = res;
+      });
+    } else {
+      console.log(fieldForm);
+      this.dataService.getDataByContinent(fieldForm).subscribe((res) => {
+        console.log(res);
+        this.data = res;
+      });
+    }
   }
 }

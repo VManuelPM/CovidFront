@@ -20,6 +20,12 @@ export class DataService {
     }
   }
 
+  getDataByContinent(continent: string) {
+    if (continent) {
+      return this.http.get(`${this.baseUrl}/continent/${continent}`);
+    }
+  }
+
   getDataCountriesMap() {
     return this.http.get<any>(`${this.baseUrl}/get/countries`);
   }

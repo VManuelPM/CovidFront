@@ -20,7 +20,7 @@
       <mat-label>Select</mat-label>
       <mat-select name="option" formControlName="option">
         <mat-option value="country">Country</mat-option>
-        <mat-option value="continet">Continet</mat-option>
+        <mat-option value="continent">Continent</mat-option>
       </mat-select>
       <mat-error *ngIf="getControl.option.touched && getControl.option.invalid">
         <mat-error *ngIf="getControl.option.errors.required">
@@ -29,10 +29,12 @@
       </mat-error>
     </mat-form-field>
 
-
     <button mat-button type="submit" id="submit" *ngIf="!searchForm.invalid">SEARCH</button>
   </form>
   <div>
     <img src="../../../assets/img/location.png">
   </div>
+</div>
+<div *ngIf="data">
+  <app-table [data]="data"></app-table>
 </div>
