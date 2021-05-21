@@ -16,13 +16,13 @@ export class DataService {
 
   getDataCountry(country: string) {
     if (country) {
-      return this.http.get(`${this.baseUrl}/country/${country}`);
+      return this.http.get<any>(`${this.baseUrl}/country/${country}`);
     }
   }
 
   getDataByContinent(continent: string) {
     if (continent) {
-      return this.http.get(`${this.baseUrl}/continent/${continent}`);
+      return this.http.get<any>(`${this.baseUrl}/continent/${continent}`);
     }
   }
 

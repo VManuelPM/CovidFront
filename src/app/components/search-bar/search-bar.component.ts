@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
+import Swal from "sweetalert2";
 import { DataService } from "../../services/data.service";
 
 @Component({
@@ -45,13 +46,29 @@ export class SearchBarComponent implements OnInit {
     if (optionForm == "country") {
       this.dataService.getDataCountry(fieldForm).subscribe((res) => {
         console.log(res);
-        this.data = res;
+        if (res.length == 0) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Not results found",
+          });
+        } else {
+          this.data = res;
+        }
       });
     } else {
       console.log(fieldForm);
       this.dataService.getDataByContinent(fieldForm).subscribe((res) => {
         console.log(res);
-        this.data = res;
+        if (res.length == 0) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Not results found",
+          });
+        } else {
+          this.data = res;
+        }
       });
     }
   }

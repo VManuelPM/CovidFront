@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe(
         (res) => {
-          console.log(res);
           if (!sessionStorage.getItem("token")) {
             sessionStorage.setItem("token", res.message);
             this.router.navigate(["/home"]);

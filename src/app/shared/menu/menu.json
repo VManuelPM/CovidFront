@@ -10,9 +10,9 @@
       "url": "search"
     },
     {
-      "title": "Option",
-      "icon": "../../../assets/img/search.png",
-      "url": "search"
+      "title": "Add",
+      "icon": "../../../assets/img/add.png",
+      "url": "add"
     }
   ]
 }
