@@ -5,7 +5,7 @@ export interface Data {
   population: number;
   indicator: string;
   weekly_count: number;
-  rate_14_day: string;
+  rate_14_day?: string;
   cumulative_count: number;
   source: string;
 }

@@ -38,8 +38,15 @@
     </ng-container>
 
     <ng-container matColumnDef="year_week">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Year_week </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Year week </th>
       <td mat-cell *matCellDef="let row"> {{row.year_week}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-icon (click)="delete(row)">delete</mat-icon>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

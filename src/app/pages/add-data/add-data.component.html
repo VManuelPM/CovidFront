@@ -4,15 +4,101 @@
     <h1>Add Data</h1>
   </div>
   <div class="container">
-    <div class="wrap-search">
-      <div class="search-bar">
-        <app-search-bar></app-search-bar>
-      </div>
-      <div>
-        <img src="" alt="">
-      </div>
-      <div>
-        <table></table>
-      </div>
+    <div class="wrap">
+      <form action="" class="form" [formGroup]="dataForm" (ngSubmit)="submit()" novalidate>
+        <h2>Add</h2>
+        <mat-form-field>
+          <mat-label>Country</mat-label>
+          <input matInput type="text" name="country" formControlName="country">
+          <mat-error *ngIf="getControl.country.touched && getControl.country.invalid">
+            <mat-error *ngIf="getControl.country.errors.required">
+              Country is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Country Code</mat-label>
+          <input matInput type="text" name="countryCode" formControlName="countryCode">
+          <mat-error *ngIf="getControl.countryCode.touched && getControl.countryCode.invalid">
+            <mat-error *ngIf="getControl.countryCode.errors.required">
+              Country Code is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Continent</mat-label>
+          <mat-select name="continent" formControlName="continent">
+            <mat-option value="Africa">Africa</mat-option>
+            <mat-option value="America">America</mat-option>
+            <mat-option value="Asia">Asia</mat-option>
+            <mat-option value="Europe">Europe</mat-option>
+            <mat-option value="Oceania">Oceania</mat-option>
+          </mat-select>
+          <mat-error *ngIf="getControl.continent.touched && getControl.continent.invalid">
+            <mat-error *ngIf="getControl.continent.errors.required">
+              Continent is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>Population</mat-label>
+          <input matInput type="number" name="population" formControlName="population">
+          <mat-error *ngIf="getControl.population.touched && getControl.population.invalid">
+            <mat-error *ngIf="getControl.population.errors.required">
+              Population is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Indicator</mat-label>
+          <mat-select name="continent" formControlName="indicator">
+            <mat-option value="cases">Cases</mat-option>
+            <mat-option value="deaths">Deaths</mat-option>
+          </mat-select>
+          <mat-error *ngIf="getControl.indicator.touched && getControl.indicator.invalid">
+            <mat-error *ngIf="getControl.indicator.errors.required">
+              Indicator is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Weekly Count</mat-label>
+          <input matInput type="number" name="source" formControlName="weeklyCount">
+          <mat-error *ngIf="getControl.weeklyCount.touched && getControl.weeklyCount.invalid">
+            <mat-error *ngIf="getControl.weeklyCount.errors.required">
+              Source is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Cumulative Count</mat-label>
+          <input matInput type="number" name="source" formControlName="cumulativeCount">
+          <mat-error *ngIf="getControl.cumulativeCount.touched && getControl.cumulativeCount.invalid">
+            <mat-error *ngIf="getControl.cumulativeCount.errors.required">
+              Source is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Source</mat-label>
+          <input matInput type="text" name="source" formControlName="source">
+          <mat-error *ngIf="getControl.source.touched && getControl.source.invalid">
+            <mat-error *ngIf="getControl.source.errors.required">
+              Source is <strong>required</strong>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-button type="submit" id="submit" *ngIf="!dataForm.invalid">Add</button>
+      </form>
     </div>
   </div>
+</div>

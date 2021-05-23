@@ -8,6 +8,8 @@ import {
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
+import { Router } from "@angular/router";
+import Swal from "sweetalert2";
 import { Data } from "../../models/data";
 import { DataService } from "../../services/data.service";
 
@@ -25,6 +27,7 @@ export class TableComponent implements OnInit {
     "indicator",
     "population",
     "year_week",
+    "action",
   ];
   dataSource: MatTableDataSource<Data>;
   @Input() data = "";
@@ -32,7 +35,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -58,5 +61,21 @@ export class TableComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  delete(row) {
+    console.log(row);
+    this.dataService.deleteData(row._id).subscribe(
+      (res) => {
+        Swal.fire({
+          backdrop: false,
+          title: "Success!",
+          text: "deleted",
+          icon: "success",
+        });
+        window.location.reload();
+      },
+      (err) => {}
+    );
   }
 }

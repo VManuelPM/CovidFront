@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
+import { Data } from "../models/data";
 
 @Injectable({
   providedIn: "root",
@@ -28,5 +29,13 @@ export class DataService {
 
   getDataCountriesMap() {
     return this.http.get<any>(`${this.baseUrl}/get/countries`);
+  }
+
+  addData(data: Data) {
+    return this.http.post<Data>(`${this.baseUrl}/post`, data);
+  }
+
+  deleteData(id: string) {
+    return this.http.delete<any>(`${this.baseUrl}/delete/${id}`);
   }
 }

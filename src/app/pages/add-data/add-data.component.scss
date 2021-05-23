@@ -15,10 +15,23 @@
   color: whitesmoke;
 }
 
-.wrap-search {
+.wrap {
   display: flex;
   flex-direction: column;
   margin: 15px 15px 5px 15px;
   background-color: whitesmoke;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+button {
+  background-color: var(--bgcolor);
+  color: white;
+  margin-bottom: 10px;
 }
