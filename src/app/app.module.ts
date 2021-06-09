@@ -22,6 +22,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { SearchComponent } from './pages/search/search.component';
 import { TableComponent } from './components/table/table.component';
 import { AddDataComponent } from './pages/add-data/add-data.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AddDataComponent } from './pages/add-data/add-data.component';
     SearchComponent,
     TableComponent,
     AddDataComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

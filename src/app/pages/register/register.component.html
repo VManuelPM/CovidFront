@@ -1,8 +1,21 @@
 <div class="parent-container">
   <div class="container">
-    <form action="" class="form" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+    <form action="" class="form" [formGroup]="loginForm" (ngSubmit)="register()" novalidate>
 
-      <h2>COVID SIGN IN</h2>
+      <h2>COVID SIGN UP</h2>
+
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name" formControlName="name">
+        <mat-error *ngIf="getControl.name.touched && getControl.name.invalid">
+          <mat-error *ngIf="getControl.name.errors.minlength && !getControl.name.errors.required">
+            Please enter a valid name
+          </mat-error>
+          <mat-error *ngIf="getControl.name.errors.required">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
 
       <mat-form-field>
         <mat-label>Email</mat-label>
@@ -30,8 +43,8 @@
         </mat-error>
       </mat-form-field>
 
-      <input type="submit" value="SIGN IN" id="submit" [disabled]="loginForm.invalid">
-      <a routerLink="/register">Signup Now</a>
+      <input type="submit" value="SIGN UP" id="submit" [disabled]="loginForm.invalid">
+      <a routerLink="/login">Already Register</a>
     </form>
 
     <div class="side">

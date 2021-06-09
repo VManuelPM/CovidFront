@@ -25,6 +25,15 @@ export class UserService {
     return this.http.post<any>(`${this.baseUrl}/user/getUser`, userToken);
   }
 
+  register(name, email, password) {
+    let user = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    return this.http.post<any>(`${this.baseUrl}/user/register`, user);
+  }
+
   isLogged() {
     if (sessionStorage.getItem("token")) {
       return true;

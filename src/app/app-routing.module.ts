@@ -6,6 +6,7 @@ import { LoginGuard } from "./core/guards/login.guard";
 import { LoggedGuard } from "./core/guards/logged.guard";
 import { SearchComponent } from "./pages/search/search.component";
 import { AddDataComponent } from "./pages/add-data/add-data.component";
+import { RegisterComponent } from "./pages/register/register.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -13,6 +14,11 @@ const routes: Routes = [
   { path: "search", component: SearchComponent, canActivate: [LoginGuard] },
   { path: "add", component: AddDataComponent, canActivate: [LoginGuard] },
   { path: "login", component: LoginComponent, canActivate: [LoggedGuard] },
+  {
+    path: "register",
+    component: RegisterComponent,
+    canActivate: [LoggedGuard],
+  },
   { path: "*", component: HomeComponent },
 ];
 
