@@ -12,11 +12,11 @@ npm install
 
 ## Visuals
 
-<img src="src/assets/img/1.png" width="500" >
-<img src="src/assets/img/2.png" width="500" >
-<img src="src/assets/img/3.png" width="500" >
-<img src="src/assets/img/4.png" width="500" >
-<img src="src/assets/img/5.png" width="500" >
+<img src="src/assets/img/1.PNG" width="500" >
+<img src="src/assets/img/2.PNG" width="500" >
+<img src="src/assets/img/3.PNG" width="500" >
+<img src="src/assets/img/4.PNG" width="500" >
+<img src="src/assets/img/5.PNG" width="500" >
 
 ## Development server
 
